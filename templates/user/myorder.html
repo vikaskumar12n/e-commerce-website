@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content %}
+{% if not request.session.userid %}
+<script>
+    alert('you have login first..')
+    location.href="/user/singin/"
+</script>
+{% endif %}
+<table class="table teble-striped">
+    <tr>
+        <th>Order No</th>
+        <th>Product</th>
+        <th>price</th>
+        <th>After Discount</th>
+        <th>size</th>
+        <th>product Delivery</th>
+        <th>Status</th>
+        <th>Order Date</th>
+        <th>Cencel</th>
+    </tr>
+    {% for i in odate %}
+    <tr>
+        <td>{{i.11}}</td>
+        <td><img src="/{{i.7}}" style="max-height:150px"
+                 class="img-thumbnail"/></td>
+        <td class="text-denger fw-bold">{{i.1}}</td>
+        <td class="text-success fw-bold">{{i.2}}</td>
+        <td><span class="btn bg-ocolor">{{i.2}}</span></td>
+        <td><div style="height:45px;width:45px;border-radius:3px;background:{{i.4}}"></div></td>
+        <td>{{i.6}}</td>
+        <td>
+            <span class="btn btn-denger">{{i.14}}</span>
+        </td>
+        <td>{{i.15}}</td>
+        <td><a href="#" class="btn btn-sm btn-denger">Cencel>
+            <i class="fa-solid fa-xmark"></i></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

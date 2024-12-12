@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    .txt
+    {
+    height:50px;
+    margin-bottom:15px;
+    }
+.txta
+    {
+    height:80px;
+    margin-bottom:15px;
+    }
+
+
+
+</style>
+<div class="fs-1 text-center">REGISTER <b class="text-ocolor">Here
+    <i class="fa-solid fa-user-plus"></i></b></div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+    <div class="col-sm-7">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" class="form-control txt" Name="name"
+                   required placeholder="Enter Name..">
+
+            <input type="email" class="form-control txt" Name="email"
+                   required placeholder="Enter email.">
+
+            <input type="password" class="form-control txt" Name="passwd"
+                   required placeholder="Enter password..">
+
+            <input type="number" class="form-control txta" Name="mob"
+                   required placeholder="Enter number..">
+
+            <input type="file" class="form-control txta" Name="pic" required>
+           <textarea class="form-control txt" name="Address"
+                     required placeholder="Address"></textarea>
+
+            <input type="submit"value="Register Now" class="btn bg-bcolor bg-Rcolor text-white">
+
+
+        </form>
+    </div>
+    <div class="col-sm-5"></div>
+            </div>
+        </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'images/banner-2.jpg'%}" rel="icon"/>
+    <title>
+        {% block title%}
+        {% endblock %}
+    </title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+    <style>
+        .bg-bcolor
+        {
+        background:#5974ab;
+        }
+         .bg-mcolor
+        {
+        background:#34382a;
+        color:white;
+        }
+        .bg-ocolor
+        {
+        background:#fbc04b;
+        }
+        .bg-Rcolor
+        {
+        background:#5974ab;
+        }
+         .bg-Rcolor:hover
+        {
+        background:#ff8800;
+        }
+        .text-ocolor
+        {
+        color:#fbc04b;
+        }
+        .text-dcolor
+        {
+        color:#0d6efd;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        #menu ul li a:hover
+        {
+        background:#fbc04b;
+        border-radius:7px;
+        }
+        .ufooter
+        {
+        min-height:300px;
+        border-bottom:1px solid white;
+        }
+        .bfooter
+        {
+        height:50px;
+        font-size:22px;
+        text-align:center;
+        line-height:50px;
+        color:white;
+        }
+        .bfooter a
+        {
+        text-decoration:none;
+        }
+        .bfooter a:hover
+        {
+        color:white;
+        }
+        .w
+        {
+        background:url("{% static 'images/ghj.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        }
+         .m
+        {
+        background:url("{% static 'images/men.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        }
+         .k
+        {
+        background:url("{% static 'images/kids.jpg'%}");
+        background-size:100% 100%;
+        min-height:220px;
+        padding-top:100px;
+        }
+        .btn1
+        {
+        background:#fbc04b;
+        }
+        .product
+        {
+        min-height:500px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg-bcolor text-light text-center fs-5">
+        <div class="col-sm-4">
+            <i class="fa-solid fa-phone"></i>
+            +918528118190 || +917376159597
+        </div>
+        <div class="col-sm-4">
+            Welcome to Fav Cart India
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </div>
+        <div class="col-sm-4">
+            <a href="https://www.facebook.com" target="_blank"class="fa-brands fa-facebook"></a>
+            <a href="https://www.youtube.com"target="_blank"class="fa-brands fa-youtube"></a>
+            <a href="https://twitter.com"target="_parent"class="fa-brands fa-twitter"></a>
+            <a href="https://www.instagram.com" target="_blank"class="fa-brands fa-instagram"></a>
+
+        </div>
+    </div>
+    <div class="row header py-3 text-center ">
+        <div class="col-sm-4 fs-2 text-center">
+            FavCart <b class="text-ocolor">India
+            <i class="fa-solid fa-cart-arrow-down"></i></b>
+        </div>
+        <div class="col-sm-4 pt-2">
+            <div class="input-group"><input type="text" class="form-control" placeholder="Search...">
+                <i class="input-group-text bg-ocolor text-light">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </i>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <a href="#" class="btn bg-ocolor">
+                Cart <i class="fa-solid fa-cart-arrow-down"></i>
+            </a>
+            {% if request.session.userid %}
+            <b>{{ request.session.userid}}</b>
+            {% else %}
+            <b>Guest User</b>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row menu bg-bcolor" style="min-height:45px">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <!-- start menu -->
+            <nav class="navbar navbar-expand-lg " id="menu">
+                <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/user/index/">
+                                    <i class="fa-solid fa-house-user"></i>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/about/"><i class="fa-solid fa-address-card"></i>
+
+                                </i>About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                     <i class="fa-brands fa-product-hunt"></i>Product
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item bg-Rcolor" href="/user/mens/">Men's</a></li>
+                                    <li><a class="dropdown-item bg-Rcolor" href="/user/womens/">Women's</a></li>
+                                    <li><a class="dropdown-item bg-Rcolor" href="/user/kids/">Kid's</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/myorder/">
+                                    <i class="fa-brands fa-figma"></i>My Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/enquiry">
+                                    <i class="fa-brands fa-pushed"></i>Enquiry</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/signup/">
+                                    <i class="fa-solid fa-user"></i>Sign UP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/profile/">
+                                    <i class="fa-regular fa-image"></i>My Profile</a>
+                            </li>
+                            {% if request.session.userid %}
+                            {}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/signout/">
+                                    <i class="fa-regular fa-user-plus"></i>Signout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/user/signin/">
+                                    <i class="fa-solid fa-clone"></i>Sign In</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <!-- end menu -->
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+    <div class="row product">
+        <div class="col-sm-12 py-3">
+    {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+    <div class="row bigsale">
+
+
+        </div>
+        <div class="col-sm-12">
+
+        </div>
+    </div>
+    <div class="row message"></div>
+    <div class="row ufooter bg-mcolor border-1">
+        <div class="col-sm-3 fs-2">
+            <div class="fs-2 text-center">About<b class="text-ocolor">Us
+    <i class="fa-regular fa-address-card"></i>
+</b></div></br>
+            <p href="#"class="fs-5">Contant us</p>
+            <p href="#"class="fs-5">Signin</p>
+            <p href="#"class="fs-5">Product</p>
+            <p href="#"class="fs-5">Signup</p>
+            <p href="#"class="fs-5">Enquiry</p>
+
+        </div>
+        <div class="col-sm-3 fs-2">
+            <div class="fs-2 text-center">Social<b class="text-ocolor">Meddia
+                <i class="fa-regular fa-compact-disc"></i>
+</b></div></br>
+
+            <p href="https://www.facebook.com" target="_blank "class="fa-brands fa-facebook color:white;"></p></br>
+            <p href="https://www.youtube.com"target="_blank"class="fa-brands fa-youtube "></p></br>
+            <p href="https://twitter.com"target="_parent"class="fa-brands fa-twitter "></p></br>
+            <p href="https://www.instagram.com" target="_blank"class="fa-brands fa-instagram"></p></br>
+
+        </div>
+        <div class="col-sm-3 fs-2">
+            <div class="fs-2 text-center">Mail<b class="text-ocolor">Us
+    <i class="fa-solid fa-user-plus"></i>
+</b></div></br>
+           <p class="fs-5">Fevcard internet private limited</br>
+           plot no-43_behind hp petrol pump
+               tedi puliya ring road RD sector-5
+               lucknow utter predesh-226022
+           </p>
+        </div>
+        <div class="col-sm-3 fs-2">
+            <div class="fs-2 text-center">Register Office<b class="text-ocolor">Address
+    <i class="fa-solid fa-registered"></i>
+</b></div></br>
+         <p class="fs-5">Fevcard internet private limited</br>
+             plot no-43_behind hp petrol pump
+               tedi puliya ring road RD sector-5
+               lucknow utter predesh-226022</br>
+         Contant Number:-8528118190
+         </p>
+        </div>
+    </div>
+    <div class="row bfooter bg-mcolor">
+        <div class="col-sm-6">
+            <b class="text-ocolor"> <i class="fa-brands fa-connectdevelop"></i></b>
+            Developed By : <a href="#" class="text-dcolor">Vikas Bind</a>
+        </div>
+        <div class="col-sm-6">
+           <b class="text-ocolor"> <i class="fa-brands fa-linkedin"></i></i></b>
+            &copy; Copyright to : <a href="https://www.techpile.in" target="_blank" class="text-dcolor">Techpile
+            Technology Pvt. Ltd.</a>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+    <div class="fs-1 text-center">About Our<b class="text-ocolor">Company
+    <i class="fa-solid fa-user-plus"></i>
+</b></div></br>
+    <div class="row">
+        <div class="col-sm-6">
+            <iframe class="w-100 img-card-top" height="300" src="{% static '/videos/shopping2.mp4'%}" title="youtube video player"
+            frameborder="0"alert="accelerometer;autoplay
+clipboard-write; encrypted-media; gyroscops;picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-6">
+            <h2>welcom to techpile just there is some</br>
+                little word to discribe our work scope</h2>
+            <h4>The word you've entered isn't in the
+                dictionary.Click on a spelling suggestion
+             below or tryagain using the search bar above.</h4>
+
+        </div>
+
+    </div>
+    {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="fs-1 text-center">Login<b class="text-ocolor">Here
+    <i class="fa-solid fa-user-plus"></i>
+</b></div>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <for method="post">
+            {% csrf_token %}
+    <input type="email" class="form-control"required name="email"></br>
+    <input type="password" class="form-control"required name="passwd"></br>
+    <input type="submit" class="btn bg-Rcolor text-white" value="login"></br>
+    </for>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% endblock %}

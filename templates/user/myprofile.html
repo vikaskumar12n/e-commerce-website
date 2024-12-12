@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+{% if not request.session.userid %}
+<script>
+    alert('you have login first..')
+    location.href="/user/singin/"
+</script>
+{% endif %}
+<div class="fs-2 text-center">My<b class="text-ocolor">Profile
+<i class="fa-solid fa-cart-sopping"></i>
+</b></div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            <!--start card!-->
+            {% for x in mdata %}
+            <div class="card md-3 w-100">
+                <div class="row g-0">
+                    <div class="col-md-4 p-3">
+                        <img src="{% static 'images/vi.jpg'%}"class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{x.name}}</h5>
+                            <p class="card-text">
+                                <b>Mobile :</b>{{x.Mobile}}</br>
+                                <b>Email :</b>{{x.Email}}</br>
+                                <b>password :</b>{{x.passwd}}</br>
+                                <b>Address:</b>{{x.x.address}}</br>
+                                <a href="#" class="btn bg-ocolor float-end">Edit profile</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--end card!-->
+        </div>
+    </div>
+    <div class="col-sm-2">ss</div>
+</div>
+{% endblock  %}
